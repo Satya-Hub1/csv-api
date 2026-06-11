@@ -9,6 +9,13 @@ from pydantic import BaseModel
 
 app = FastAPI(title="CSV API", version="1.0.0")
 
+@app.get("/")
+def home():
+    return {"message": "CSV API is running"}
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 
 # ── DTOs ──────────────────────────────────────────────────────────────────────
 
